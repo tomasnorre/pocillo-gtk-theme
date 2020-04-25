@@ -101,6 +101,7 @@ button {
       color: $inverse_disabled_secondary_fg_color;
     }
 
+    @at-root $button_selected_flat
     &.flat {
       color: $inverse_secondary_fg_color;
 

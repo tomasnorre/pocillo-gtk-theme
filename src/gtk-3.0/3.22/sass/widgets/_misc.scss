@@ -1,6 +1,7 @@
 /*********
  * Links *
  *********/
+@at-root %link
 *:link {
   &, &:hover, &:active { color: $link_color; }
 
@@ -15,7 +16,7 @@
 
 button:link,
 button:visited {
-  @extend *:link;
+  @extend %link;
 
   > label { text-decoration-line: underline; }
 }
@@ -86,7 +87,7 @@ printdialog {
 
   margin: $small_padding;
 
-  button { @extend %button_basic.flat; }
+  button { @extend %flat_button; }
 
   &.frame,
   border { border-style: none; }

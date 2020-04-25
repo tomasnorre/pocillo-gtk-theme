@@ -88,13 +88,14 @@ notebook:focus tab,
 }
 
 .view {
-  @extend row.activatable;
+  @extend %row_activatable;
 
   background-color: $base_color;
   color: $fg_color;
 
   &:disabled { color: $disabled_fg_color; }
 
+  @at-root %row_activatable
   &:hover, &:active, &:selected { border-radius: 4px; }
 
   selection,
@@ -158,10 +159,11 @@ label {
     color: $inverse_fg_color;
   }
 
+  @at-root %selected_items_disabled
   &:disabled {
     color: $disabled_fg_color;
 
-    selection { @extend %selected_items:disabled; }
+    selection { @extend %selected_items_disabled; }
 
     tab &,
     button & { color: inherit; }
